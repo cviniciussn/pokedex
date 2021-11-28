@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const Main = styled.main`
+const MainContent = styled.main`
 
 `;
 
 export {
-    Main,
+    MainContent,
 };

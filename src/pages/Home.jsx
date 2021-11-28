@@ -1,19 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+
+// components
 import Header from '../components/Header/Header';
-import Main from '../components/Main/Main';
+import MainContent from '../components/MainContent/MainContent';
+import Footer from '../components/Footer/Footer';
 
 const HomeComponent = styled.div`
-
-    width: 100vw;
-    height: 100vh;
+width: 100%;
+height: 100vh;
 `
 
 export default function Home() {
     return (
         <HomeComponent>
             <Header></Header>
-            <Main></Main>
+            <MainContent></MainContent>
+            <Footer></Footer>
         </HomeComponent>
     )
 }

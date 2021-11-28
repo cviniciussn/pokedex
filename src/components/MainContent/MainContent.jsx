@@ -6,12 +6,9 @@ import banner from '../../img/home-banner.svg';
 const MainComponent = styled.main`
 width: 100%;
 background: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%);
-${'' /* margin-top: 20px; */}
-z-index: 2;
-
 
 display: flex;
-justify-content: space-between;
+${'' /* justify-content: center; */}
 
     .home-content {
         width: calc(100% - 240px);
@@ -68,7 +65,7 @@ justify-content: space-between;
     }
 `;
 
-const Main = () => {
+const MainContent = () => {
     return (
         <MainComponent>
             <div className="home-content">
@@ -86,10 +83,10 @@ const Main = () => {
             </div>
 
             <div className="home-image">
-                <img src={banner} alt="" />
+                <img src={banner} alt="Imagem Home" />
             </div>
         </MainComponent>
     )
 }
 
-export default Main;
+export default MainContent;
