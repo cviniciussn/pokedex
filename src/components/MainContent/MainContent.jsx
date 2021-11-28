@@ -8,8 +8,6 @@ width: 100%;
 background: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%);
 
 display: flex;
-${'' /* justify-content: center; */}
-
     .home-content {
         width: calc(100% - 240px);
         padding: 128px 0 128px 120px;
