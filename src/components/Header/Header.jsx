@@ -6,6 +6,7 @@ import logo from '../../img/logo.svg';
 const HeaderComponent = styled.header`
 background-color: #F5DB13;
 padding: 16px 120px;
+position: relative;
 box-shadow: 0px 4px 16px rgba(1, 28, 64, 0.2);
 
     .header-content {
