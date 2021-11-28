@@ -20,7 +20,6 @@ export default function Home() {
     return (
         <HomeComponent>
             <Header></Header>
-            {/* <PokeCard></PokeCard> */}
         </HomeComponent>
     )
 }

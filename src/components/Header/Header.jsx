@@ -59,19 +59,17 @@ box-shadow: 0px 4px 16px rgba(1, 28, 64, 0.2);
 
 `;
 
-
-export default function Header(props) {
+export default function Header() {
     return (
         <HeaderComponent>
             <div className='header-content'>
-                <img src={logo} alt='' />
+                <img src={logo} alt='Logo' />
 
                 <nav>
                     <ul className='navigation'>
                         <li className='active'><a href="/home" >Home</a></li>
                         <li><a href="/pokedex" className='active'>Pokedéx</a></li>
-                        <li><a href="/legendary">Lengendaries</a></li>
-                        <li><a href="/documentation">Documenation</a></li>
+                        <li><a href="/legendary">Lengendários</a></li>
                     </ul>
                 </nav>
             </div>
