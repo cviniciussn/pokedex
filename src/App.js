@@ -1,5 +1,10 @@
+import { createGlobalStyle } from 'styled-components';
+
+// components
 import Home from './pages/Home/Home';
-import { createGlobalStyle } from 'styled-components'
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Pokedex from './pages/Pokedex/Pokedex';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -17,7 +22,9 @@ function App() {
   return (
     <>
       <GlobalStyle></GlobalStyle>
+      <Header></Header>
       <Home></Home>
+      {/* <Pokedex></Pokedex> */}
     </>
 
   );

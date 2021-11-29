@@ -86,5 +86,5 @@ const PokedexComponent = styled.div`
 `
 
 export {
-    PokedexComponent
+    PokedexComponent,
 }
