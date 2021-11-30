@@ -13,7 +13,7 @@ export default function Header() {
 
                 <nav>
                     <ul className='navigation'>
-                        <li className='active'><a href="/home" >Home</a></li>
+                        <li className='active'><a href="/" >Home</a></li>
                         <li><a href="/pokedex" className='active'>Pokedéx</a></li>
                         <li><a href="/legendary">Lengendários</a></li>
                     </ul>

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const MainComponent = styled.main`
 width: 100%;
+height: 100vh;
 background: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%);
 
 display: flex;

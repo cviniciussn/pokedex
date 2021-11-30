@@ -4,18 +4,23 @@ const PokeCardComponent = styled.div`
 
 display: block;
 width: 341px;
-height: 162px;
+height: 180px;
 
 position: relative;
 border-radius: 10px;
 background-color: #E8E8E8;
+
+&:hover{
+    box-shadow: 5px 5px 10px black;
+    transition: all .5s;
+}
 
     .pokemon-container{
         width: 225px;
         height: 100%;
         position: absolute;
         left: 130px;
-        background-color: #70a83b;
+        background-color: ${props => props.colorFirst};
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
 
@@ -75,9 +80,10 @@ background-color: #E8E8E8;
                     justify-content: center;
 
                     position: absolute;
-                    width: 50px;
-                    height: 18px;
-                    padding: 2px 3px;
+                    //width: 50px;
+                    width: max-content;
+                    height: max-content;
+                    padding: 5px;
                     text-align: center;
                     border-radius: 8px;
 
@@ -92,6 +98,7 @@ background-color: #E8E8E8;
 
                 #type-2{
                     background-color: ${props => props.colorSecond};
+                    display: ${props => props.second || "block"};
                 }
 
             }
