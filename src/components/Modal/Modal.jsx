@@ -1,5 +1,4 @@
 import React from 'react';
-import { Progress } from 'antd';
 
 // style
 import { ModalComponent } from './modal-style.js';
