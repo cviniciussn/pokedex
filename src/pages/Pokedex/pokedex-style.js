@@ -12,6 +12,8 @@ const PokedexComponent = styled.div`
     justify-content: center;
 
 
+
+
    //background-color: blue;
 
 
@@ -38,8 +40,8 @@ const PokedexComponent = styled.div`
 
     .home-container{
         position: absolute;
-        top: 15vh;
-        bottom: 0;
+        top: 2vh;
+       // bottom: 0;
 
         display: flex;
         flex-direction: column;
@@ -56,6 +58,8 @@ const PokedexComponent = styled.div`
         .buscar{
             width: 70vw;
             height: 53px;
+            margin-bottom: 50px;
+
             background-color: #cdcdcd;
             border-radius: 10px;
             

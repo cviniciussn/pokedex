@@ -4,6 +4,9 @@ import { createGlobalStyle } from 'styled-components';
 import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Pokedex from './pages/Pokedex/Pokedex';
+import Router from './routes/Router';
+import GeneralContexts from './contexts/GeneralContexts';
 import Modal from './components/Modal/Modal';
 
 
@@ -21,13 +24,11 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <>
+    <GeneralContexts>
       <GlobalStyle></GlobalStyle>
-      {/* <Header></Header> */}
-      {/* <Home></Home> */}
-      {/* <Pokedex></Pokedex> */}
+      <Router></Router>
       <Modal></Modal>
-    </>
+     </GeneralContexts>
 
   );
 }
