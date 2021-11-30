@@ -7,6 +7,8 @@ import Footer from './components/Footer/Footer';
 import Pokedex from './pages/Pokedex/Pokedex';
 import Router from './routes/Router';
 import GeneralContexts from './contexts/GeneralContexts';
+import Modal from './components/Modal/Modal';
+
 
 
 const GlobalStyle = createGlobalStyle`
@@ -25,10 +27,8 @@ function App() {
     <GeneralContexts>
       <GlobalStyle></GlobalStyle>
       <Router></Router>
-      {/* <Header></Header>
-      <Home></Home> */}
-      {/* <Pokedex></Pokedex> */}
-    </GeneralContexts>
+      <Modal></Modal>
+     </GeneralContexts>
 
   );
 }
