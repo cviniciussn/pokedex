@@ -1,4 +1,21 @@
 import styled from "styled-components"
+import { keyframes } from "styled-components"
+
+const entrance = keyframes`
+ 0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    opacity: 1;
+  }`
 
 const PokedexComponent = styled.div`
 
@@ -10,6 +27,8 @@ const PokedexComponent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation-name: ${entrance};
+    animation-duration: .5s;
 
 
 
@@ -41,6 +60,7 @@ const PokedexComponent = styled.div`
     .home-container{
         position: absolute;
         top: 2vh;
+        padding: 20px;
        // bottom: 0;
 
         display: flex;
@@ -71,6 +91,10 @@ const PokedexComponent = styled.div`
                 border-radius: 10px;
 
             }
+        }
+
+        .pagination{
+            padding: 15px;
         }
 
         .gallery{

@@ -8,29 +8,50 @@ const DataContext = createContext()
 
 export default function GeneralContexts({ children }) {
 
+
+
   const [loading, setLoading] = useState(false)
+  //const [link, setLink] = useState([])
   const pokemonData = []
   const link = []
 
+
   async function getPage(page) {
+    // if (page === 1) {
+    //   page = 0
+    // }
+    // await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${page}0&limit=50`).then(
+    //   res => {
+    //     res.data.results.map(
+    //       pokemon => {
+    //         link.push(pokemon.url)
+    //       }
+    //     )
+    //     getPokemons()
+    //   }
+
+    // )
+  }
+
+  async function getPokemons(page) {
+    setLoading(true)
+
     if (page === 1) {
       page = 0
     }
-    await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${page}0&limit=21`).then(
+    await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${page}0&limit=50`).then(
       res => {
         res.data.results.map(
           pokemon => {
             link.push(pokemon.url)
           }
         )
-        getPokemons()
       }
 
     )
-  }
 
-  async function getPokemons() {
-    setLoading(true)
+
+    localStorage.removeItem('pokemonData')
     for (let i = 1; i <= 20; i++) {
       await axios.get(`${link[i - 1]}`).then(
         response => {

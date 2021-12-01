@@ -24,7 +24,7 @@ export default function PokeCard(props) {
   ) {
     backgroundColor = colors.grass
   } else if (props.type_first === "ice" || props.type_first === "water") {
-    backgroundColor = colors.eletric
+    backgroundColor = colors.water
   } else if (props.type_first === "fire" || props.type_first === "fighting" || props.type_first === "dragon") {
     backgroundColor = colors.fire
   } else if (props.type_first === "normal" || props.type_first === "gosth") {
@@ -33,7 +33,7 @@ export default function PokeCard(props) {
     backgroundColor = colors.poison
   } else if (props.type_first === "ground") {
     backgroundColor = colors.ground
-  } else if (props.type_first === "eletric") {
+  } else if (props.type_first === "electric") {
     backgroundColor = colors.eletric
   }
 
@@ -68,9 +68,7 @@ export default function PokeCard(props) {
               Attack
             </p>
             <div className="type" id='type-1'>
-              <p>
-                {props.type_first}
-              </p>
+              {props.type_first}
             </div>
           </div>
 
@@ -80,9 +78,7 @@ export default function PokeCard(props) {
             </div>
             <p>Defense</p>
             <div className="type" id='type-2'>
-              <p>
-                {props.type_second}
-              </p>
+              {props.type_second}
             </div>
           </div>
         </div>
