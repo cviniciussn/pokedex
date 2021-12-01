@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import 'antd/dist/antd.css'
 
 // components
 import Home from './pages/Home/Home';
@@ -28,7 +29,7 @@ function App() {
       <GlobalStyle></GlobalStyle>
       <Router></Router>
       <Modal></Modal>
-     </GeneralContexts>
+    </GeneralContexts>
 
   );
 }

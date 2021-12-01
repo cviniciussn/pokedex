@@ -1,18 +1,42 @@
 import styled from 'styled-components'
+import { keyframes } from "styled-components"
+
+const flip = keyframes`
+  0% {
+    -webkit-transform: rotate3d(-1, 1, 0, -80deg);
+            transform: rotate3d(-1, 1, 0, -80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate3d(1, 1, 0, 0deg);
+            transform: rotate3d(1, 1, 0, 0deg);
+    opacity: 1;
+  }
+  }
+`
 
 const PokeCardComponent = styled.div`
 
 display: block;
 width: 341px;
-height: 180px;
+height: 200px;
 
 position: relative;
 border-radius: 10px;
 background-color: #E8E8E8;
 
+animation-name: ${flip};
+animation-duration: 2s;
+
 &:hover{
-    box-shadow: 5px 5px 10px black;
+    box-shadow: 5px 5px 5px 5px ${props => props.colorFirst};
     transition: all .5s;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+&:not(:hover){
+    transition: all .5s;
+
 }
 
     .pokemon-container{
@@ -59,8 +83,8 @@ background-color: #E8E8E8;
             .attak-defense{
                 border-radius: 100%;
                 border: 5px solid black;
-                width: 46px;
-                height: 46px;
+                width: 55px;
+                height: 55px;
                 font-size: x-large;
                // margin-bottom: 2px;
     
@@ -82,7 +106,7 @@ background-color: #E8E8E8;
                     position: absolute;
                     //width: 50px;
                     width: max-content;
-                    height: max-content;
+                    height: fit-content;
                     padding: 5px;
                     text-align: center;
                     border-radius: 8px;
