@@ -8,30 +8,10 @@ const DataContext = createContext()
 
 export default function GeneralContexts({ children }) {
 
-
-
   const [loading, setLoading] = useState(false)
-  //const [link, setLink] = useState([])
+  const [modal, setModal] = useState(false)
   const pokemonData = []
   const link = []
-
-
-  async function getPage(page) {
-    // if (page === 1) {
-    //   page = 0
-    // }
-    // await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${page}0&limit=50`).then(
-    //   res => {
-    //     res.data.results.map(
-    //       pokemon => {
-    //         link.push(pokemon.url)
-    //       }
-    //     )
-    //     getPokemons()
-    //   }
-
-    // )
-  }
 
   async function getPokemons(page) {
     setLoading(true)
@@ -39,6 +19,7 @@ export default function GeneralContexts({ children }) {
     if (page === 1) {
       page = 0
     }
+
     await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${page}0&limit=50`).then(
       res => {
         res.data.results.map(
@@ -47,11 +28,12 @@ export default function GeneralContexts({ children }) {
           }
         )
       }
-
-    )
-
+    ).catch(error => {
+      throw console.error(error)
+    })
 
     localStorage.removeItem('pokemonData')
+
     for (let i = 1; i <= 20; i++) {
       await axios.get(`${link[i - 1]}`).then(
         response => {
@@ -74,7 +56,6 @@ export default function GeneralContexts({ children }) {
             }
           )
 
-
           pokemonData.push({
             name: response.data.name,
             pic: response.data.sprites.other.dream_world.front_default,
@@ -92,26 +73,32 @@ export default function GeneralContexts({ children }) {
   }
 
   return (
-    <DataContext.Provider
-      value={{
-        getPokemons,
-        pokemonData,
-        loading,
-        getPage,
-      }}>
+    <DataContext.Provider value={{
+      getPokemons,
+      pokemonData,
+      loading,
+      modal,
+      setModal
+    }}>
+
       {children}
+
     </DataContext.Provider>
   )
 
 }
 
+
+
 export function useData() {
   const context = useContext(DataContext)
+
   const {
     getPokemons,
     pokemonData,
     loading,
-    getPage
+    modal,
+    setModal
   } = context
 
   return (
@@ -119,7 +106,8 @@ export function useData() {
       getPokemons,
       pokemonData,
       loading,
-      getPage
+      modal,
+      setModal
     }
   )
 }

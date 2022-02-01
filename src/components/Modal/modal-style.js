@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ModalComponent = styled.div`
+const Background = styled.div`
 width: 100%;
 height: 100vh;
 
@@ -11,6 +11,11 @@ align-items: center;
 position: fixed;
 z-index: 9999;
 background: rgba(0, 0, 0, .3);
+
+`
+
+const ModalComponent = styled.div`
+
 
     .modal-card {
         width: 796px;
@@ -260,4 +265,5 @@ background: rgba(0, 0, 0, .3);
 
 export {
     ModalComponent,
+    Background
 }

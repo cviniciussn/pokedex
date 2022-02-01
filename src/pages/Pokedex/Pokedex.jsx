@@ -1,32 +1,36 @@
 import React, { useEffect, useState } from 'react'
 import { PokedexComponent } from './pokedex-style'
+import { useData } from '../../contexts/GeneralContexts';
+import { animated, useSpring } from 'react-spring'
+
 import PokeCard from '../../components/Cards/Cards'
 import Pagination from '@mui/material/Pagination'
-
-
-import Header from '../../components/Header/Header';
-import { useData } from '../../contexts/GeneralContexts';
-
 import Loading from '../Loading/Loading';
+import Modal from '../../components/Modal/Modal'
+import Header from '../../components/Header/Header';
+
 
 
 export default function Home() {
 
   const [pokemonData, setPokemonData] = useState([])
   const [currentPage, setPage] = useState(1)
-
-  const data = useData()
-  const getPage = data.getPokemons
-  let loading = data.loading
-  //const pokemonData = data.pokemonData
-
+  const { getPokemons, loading, modal } = useData()
 
   async function handleData() {
-    await getPage(currentPage)
+    await getPokemons(currentPage)
     let data = localStorage.getItem("pokemonData")
     data = JSON.parse(data)
     setPokemonData(data)
   }
+
+  const animation = useSpring({
+    config: {
+      duration: 250
+    },
+    opacity: modal ? 1 : 0,
+    transform: modal ? `translateY(0%)` : `translateY(-100%)`
+  })
 
   useEffect(() => {
     handleData()
@@ -34,6 +38,10 @@ export default function Home() {
 
 
   return (<>
+
+    {
+      modal && <Modal />
+    }
     <Header></Header>
     <PokedexComponent>
       <div className="home-container">
@@ -56,26 +64,27 @@ export default function Home() {
 
         <div className="gallery">
           {
-            loading ? <Loading></Loading> :
+            loading ? <Loading /> :
               pokemonData.map(
                 pokemon => {
-                  console.log(pokemon.type_second)
-                  return (<PokeCard
-                    key={pokemon.name}
-                    name={pokemon.name}
-                    pic={pokemon.pic}
-                    attak={pokemon.attak}
-                    defense={pokemon.defense}
-                    type_first={pokemon.type_first}
-                    type_second={pokemon.type_second}
-                  />)
+                  return (
+                    <PokeCard
+                      key={pokemon.name}
+                      name={pokemon.name}
+                      pic={pokemon.pic}
+                      attak={pokemon.attak}
+                      defense={pokemon.defense}
+                      type_first={pokemon.type_first}
+                      type_second={pokemon.type_second}
+                    />
+                  )
 
                 }
               )}
         </div>
       </div>
-
     </PokedexComponent>
+
   </>
   )
 

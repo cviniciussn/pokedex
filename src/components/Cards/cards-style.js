@@ -3,18 +3,13 @@ import { keyframes } from "styled-components"
 
 const flip = keyframes`
   0% {
-    -webkit-transform: rotate3d(-1, 1, 0, -80deg);
-            transform: rotate3d(-1, 1, 0, -80deg);
     opacity: 0;
   }
   100% {
-    -webkit-transform: rotate3d(1, 1, 0, 0deg);
-            transform: rotate3d(1, 1, 0, 0deg);
     opacity: 1;
   }
-  }
+  
 `
-
 const PokeCardComponent = styled.div`
 
 display: block;
@@ -29,7 +24,7 @@ animation-name: ${flip};
 animation-duration: 2s;
 
 &:hover{
-    box-shadow: 5px 5px 5px 5px ${props => props.colorFirst};
+    box-shadow: 5px 5px 5px 5px ${props => props.colorFirst}; 
     transition: all .5s;
     cursor: pointer;
     transform: scale(1.1);
@@ -44,7 +39,7 @@ animation-duration: 2s;
         height: 100%;
         position: absolute;
         left: 130px;
-        background-color: ${props => props.colorFirst};
+        background-color: ${props => props.colorFirst}; 
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
 
@@ -82,7 +77,7 @@ animation-duration: 2s;
 
             .attak-defense{
                 border-radius: 100%;
-                border: 5px solid black;
+                border: 5px solid rgb(40,42,53);
                 width: 55px;
                 height: 55px;
                 font-size: x-large;
