@@ -2,10 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import 'antd/dist/antd.css'
 
 // components
-import Home from './pages/Home/Home';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Pokedex from './pages/Pokedex/Pokedex';
 import Router from './routes/Router';
 import GeneralContexts from './contexts/GeneralContexts';
 import Modal from './components/Modal/Modal';

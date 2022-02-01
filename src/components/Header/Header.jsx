@@ -1,6 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-
 import { HeaderComponent } from './header-style.js'
 
 import logo from '../../img/logo.svg';

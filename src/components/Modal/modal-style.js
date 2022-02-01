@@ -158,7 +158,7 @@ const ModalComponent = styled.div`
                         }
 
                         progress {
-                            widith: 100%;
+                            width: 100%;
                             height: 5px;
                             background-color: #F6F7F9;
                             border-radius: 8px;

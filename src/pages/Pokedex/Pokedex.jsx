@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { PokedexComponent } from './pokedex-style'
 import { useData } from '../../contexts/GeneralContexts';
-import { animated, useSpring } from 'react-spring'
 
 import PokeCard from '../../components/Cards/Cards'
 import Pagination from '@mui/material/Pagination'
@@ -17,22 +16,14 @@ export default function Home() {
   const [currentPage, setPage] = useState(1)
   const { getPokemons, loading, modal } = useData()
 
-  async function handleData() {
-    await getPokemons(currentPage)
-    let data = localStorage.getItem("pokemonData")
-    data = JSON.parse(data)
-    setPokemonData(data)
-  }
-
-  const animation = useSpring({
-    config: {
-      duration: 250
-    },
-    opacity: modal ? 1 : 0,
-    transform: modal ? `translateY(0%)` : `translateY(-100%)`
-  })
 
   useEffect(() => {
+    async function handleData() {
+      await getPokemons(currentPage)
+      let data = localStorage.getItem("pokemonData")
+      data = JSON.parse(data)
+      setPokemonData(data)
+    };
     handleData()
   }, [currentPage])
 
