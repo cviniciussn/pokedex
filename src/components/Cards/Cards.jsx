@@ -1,50 +1,20 @@
 import React from 'react'
 import { PokeCardComponent } from './cards-style'
-
+import { useData } from '../../contexts/GeneralContexts'
+import { handleCardBackground, handleBadge } from '../../styles/handleColors'
 
 export default function PokeCard(props) {
+  const { setModal } = useData()
 
-  let backgroundColor = ""
-
-  const colors = {
-    fire: "#F76545",
-    water: "#356c94",
-    grass: "#70A83B",
-    rock: "#A1A1A1",
-    poison: "#A974BC",
-    ground: "#9B897B",
-    eletric: "#F7C545",
-    normal: "#76AADB"
-  }
-
-  if (props.type_first === "stile" || props.type_first === "dark" || props.type_first === "rock") {
-    backgroundColor = colors.rock
-  } else if (
-    props.type_first === "grass" || props.type_first === "bug"
-  ) {
-    backgroundColor = colors.grass
-  } else if (props.type_first === "ice" || props.type_first === "water") {
-    backgroundColor = colors.water
-  } else if (props.type_first === "fire" || props.type_first === "fighting" || props.type_first === "dragon") {
-    backgroundColor = colors.fire
-  } else if (props.type_first === "normal" || props.type_first === "gosth") {
-    backgroundColor = colors.normal
-  } else if (props.type_first === "poison" || props.type_first === "psychic" || props.type_first === "fairy" || props.type_first === "ghost") {
-    backgroundColor = colors.poison
-  } else if (props.type_first === "ground") {
-    backgroundColor = colors.ground
-  } else if (props.type_first === "electric") {
-    backgroundColor = colors.eletric
-  }
-
-  let displayBadge
-  if (props.type_second === undefined) { displayBadge = "none" }
+  const backgroundColor = handleCardBackground(props.type_first)
+  const displayBadge = handleBadge(props.type_second)
 
   return (
     <PokeCardComponent
       colorFirst={backgroundColor}
       colorSecond="#A974BC"
       second={displayBadge}
+      onClick={_ => { setModal(true) }}
     >
 
       <div className="pokemon-container">
