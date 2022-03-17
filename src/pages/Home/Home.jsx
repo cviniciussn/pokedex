@@ -1,6 +1,5 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useData } from '../../contexts/GeneralContexts';
+
 // components
 import MainContent from '../../components/MainContent/MainContent';
 import Footer from '../../components/Footer/Footer';

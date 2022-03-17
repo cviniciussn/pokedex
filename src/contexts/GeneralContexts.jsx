@@ -22,7 +22,7 @@ export default function GeneralContexts({ children }) {
 
     await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${page}0&limit=50`).then(
       res => {
-        res.data.results.map(
+        res.data.results.forEach(
           pokemon => {
             link.push(pokemon.url)
           }
@@ -40,7 +40,7 @@ export default function GeneralContexts({ children }) {
           const attakAndDefense = []
           const types = []
 
-          response.data.stats?.map(
+          response.data.stats?.forEach(
             res => {
               if (res.stat.name && res.stat.name === "attack") {
                 attakAndDefense[0] = (res.base_stat)
@@ -50,7 +50,7 @@ export default function GeneralContexts({ children }) {
             }
           )
 
-          response.data.types?.map(
+          response.data.types?.forEach(
             res => {
               types.push(res.type.name)
             }
