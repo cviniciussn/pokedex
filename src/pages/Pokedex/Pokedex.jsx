@@ -63,10 +63,17 @@ export default function Home() {
                       key={pokemon.name}
                       name={pokemon.name}
                       pic={pokemon.pic}
-                      attak={pokemon.attak}
+                      attack={pokemon.attack}
                       defense={pokemon.defense}
                       type_first={pokemon.type_first}
                       type_second={pokemon.type_second}
+                      abilities={pokemon.abilities}
+                      healthPoints={pokemon.healthPoints}
+                      speed={pokemon.speed}
+                      specialAttack={pokemon.specialAttack}
+                      specialDefense={pokemon.specialDefense}
+                      experience={pokemon.experience}
+                      id={pokemon.id}
                     />
                   )
 

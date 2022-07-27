@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { Background, ModalComponent } from './modal-style.js';
-
-import pokemonImage from '../../img/Modal/modal-pokemon-image.svg';
 import modalClose from '../../img/Modal/modal-close.svg';
 import { useData } from '../../contexts/GeneralContexts.jsx';
 
@@ -12,9 +10,6 @@ const Modal = (props) => {
 	const closeModal = () => {
 		modal && setModal(false)
 	}
-
-
-
 	return (
 		<Background
 			onClick={closeModal}
@@ -34,41 +29,41 @@ const Modal = (props) => {
 					</div>
 
 					<div className="modal-image">
-						<img src={pokemonImage} alt="Avatar" />
+						<img src={modal.pic} alt="Avatar" />
 						<div className="types-container">
-							<p className='type' id="type-1">Grass</p>
-							<p className='type' id="type-2">Poison</p>
+							<p className='type' id="type-1">{modal.type_first}</p>
+							<p className='type' id="type-2">{modal.type_second}</p>
 						</div>
 					</div>
 
 					<div className="modal-content">
 						<div className="modal-pokemon-primary">
-							<h1 className="title">Charizard</h1>
+							<h1 className="title">{modal.name}</h1>
 
 							<div className="modal-pokemon-generation">
 								<p>Geração 1</p>
-								<span id="pokemon-gerenation-id">578</span>
+								<span id="pokemon-gerenation-id">{modal.id}</span>
 							</div>
 						</div>
 
 						<div className="modal-info">
 							<div className="pokemon-abilities">
 								<h3>Habilidades</h3>
-								<p>Overgrow - Chlorophyll</p>
+								<p>{modal.abilities}</p>
 							</div>
 
 							<div className="pokemon-vitalities">
 								<div className="pokemon-vitalities-info">
 									<h3>Pontos saudáveis</h3>
 									<div id="life-points">
-										<span>1 000 000</span>
-										<progress value="70" max="100">70 %</progress>
+										<span>{modal.healthPoints}</span>
+										<progress value="70" max="100">20 %</progress>
 									</div>
 								</div>
 								<div className="pokemon-vitalities-info">
 									<h3>Experiência</h3>
 									<div id="experience">
-										<span>1 000 000</span>
+										<span>{modal.experience}</span>
 										<progress value="70" max="100">70 %</progress>
 									</div>
 								</div>
@@ -77,25 +72,25 @@ const Modal = (props) => {
 							<div className="pokemon-properties">
 								<div className="card-property">
 									<div className="property-number" id="defense">
-										49
+									{modal.defense}
 									</div>
 									<p>Defesa</p>
 								</div>
 								<div className="card-property">
 									<div className="property-number" id="attack">
-										235
+									{modal.attack}
 									</div>
 									<p>Ataque</p>
 								</div>
 								<div className="card-property">
 									<div className="property-number" id="sp-attack">
-										4
+										{modal.specialAttack}
 									</div>
 									<p>Sp Ataque</p>
 								</div>
 								<div className="card-property">
 									<div className="property-number" id="sp-defense">
-										1000
+										{modal.specialDefense}
 									</div>
 									<p>Sp Defesa</p>
 								</div>
