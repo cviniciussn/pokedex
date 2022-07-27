@@ -21,7 +21,7 @@ border-radius: 10px;
 background-color: #E8E8E8;
 
 animation-name: ${flip};
-animation-duration: 2s;
+animation-duration: 1s;
 
 &:hover{
     box-shadow: 5px 5px 5px 5px ${props => props.colorFirst}; 
@@ -69,13 +69,13 @@ animation-duration: 2s;
             //margin-bottom: 5px;
         }
 
-        .attak-defense-container{
+        .attack-defense-container{
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 130px;
 
-            .attak-defense{
+            .attack-defense{
                 border-radius: 100%;
                 border: 5px solid rgb(40,42,53);
                 width: 55px;
@@ -88,7 +88,7 @@ animation-duration: 2s;
                 align-items: center;
             }
 
-            .attak{
+            .attack{
                 display: flex;
                 flex-direction: column;
                 align-items: center;

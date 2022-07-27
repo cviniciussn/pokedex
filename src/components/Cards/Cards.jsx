@@ -14,7 +14,7 @@ export default function PokeCard(props) {
       colorFirst={backgroundColor}
       colorSecond="#A974BC"
       second={displayBadge}
-      onClick={_ => { setModal(true) }}
+      onClick={_ => { setModal(props) }}
     >
 
       <div className="pokemon-container">
@@ -28,25 +28,25 @@ export default function PokeCard(props) {
           <h1>{props.name}</h1>
         </div>
 
-        <div className="attak-defense-container">
+        <div className="attack-defense-container">
 
-          <div className="attak">
-            <div className="attak-defense">
-              {props.attak}
+          <div className="attack">
+            <div className="attack-defense">
+              {props.attack}
             </div>
             <p>
-              Attack
+              Ataque
             </p>
             <div className="type" id='type-1'>
               {props.type_first}
             </div>
           </div>
 
-          <div className="attak">
-            <div className="attak-defense">
+          <div className="attack">
+            <div className="attack-defense">
               {props.defense}
             </div>
-            <p>Defense</p>
+            <p>Defesa</p>
             <div className="type" id='type-2'>
               {props.type_second}
             </div>
